@@ -1,0 +1,25 @@
+{
+    "config": {
+        "main-stack-size": {
+            "value": 15000   
+        }   
+    },
+    "target_overrides": {
+        "*": {
+            "target.components_add": ["SD"],
+            "target.printf_lib": "std",
+            "events.use-lowpower-timer-ticker": true,   
+            "target.macros_add": ["MBED_TICKLESS"],
+            "platform.cpu-stats-enabled": true,
+            "platform.stdio-baud-rate": 115200,
+            "platform.default-serial-baud-rate": 115200,
+            "target.network-default-interface-type": "ETHERNET",
+            "lwip.tcp-socket-max": 10
+        }   
+    },
+    "macros": [
+        "MBED_HEAP_STATS_ENABLED=1",
+        "MBED_STACK_STATS_ENABLED=1",
+        "MBED_MEM_TRACING_ENABLED=1"
+    ]
+}
